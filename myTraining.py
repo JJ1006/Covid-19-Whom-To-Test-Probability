@@ -17,8 +17,8 @@ if __name__ == "__main__":
     # Read the data
     df = pd.read_csv('data.csv')
     train, test = data_split(df, 0.2)
-    X_train = train[['fever', 'bodyPain', 'age', 'runnyNose', 'diffBreath']].to_numpy()
-    X_test = test[['fever', 'bodyPain', 'age', 'runnyNose', 'diffBreath']].to_numpy()
+    X_train = train[['fever', 'bodyPain', 'age', 'runnyNose', 'diffBreath', 'vaccine', 'oxyLevel']].to_numpy()
+    X_test = test[['fever', 'bodyPain', 'age', 'runnyNose', 'diffBreath', 'vaccine', 'oxyLevel']].to_numpy()
 
     Y_train = train[['infectionProb']].to_numpy().reshape(2060 ,)
     Y_test = test[['infectionProb']].to_numpy().reshape(515 ,)
